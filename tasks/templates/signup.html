@@ -1,5 +1,5 @@
-<h1>sign up</h1>
-
+{% extends 'base.html' %}
+{% block content %}
 {{error}}
 
 <form action="/signup/" method="POST">
@@ -7,3 +7,4 @@
   {{form.as_p}}
   <button>Signup</button>
 </form>
+{% endblock %}
