@@ -23,6 +23,6 @@ def signup(request):
                 login(request, user)
                 return redirect('tasks')
             except IntegrityError:
-                return render(request, 'signup.html', {"form": UserCreationForm, "error": "Username already exists."})
+                return render(request, 'signup.html', {"form": UserCreationForm, "error": "Nombre de usuario ya existe."})
 
-        return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
+        return render(request, 'signup.html', {"form": UserCreationForm, "error": "Las contraseñas no concuerdan."})
