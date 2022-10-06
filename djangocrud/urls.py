@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from tasks import views
 from .router import router
+# Importando settings
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +37,5 @@ urlpatterns = [
     path('create_task/', views.create_task, name='create_task'),
     path('logout/', views.signout, name='logout'),
     path('signin/', views.signin, name='signin'),
-
-]
+    # agregando static
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

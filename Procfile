@@ -1,3 +1,1 @@
-worker python manage.py
-
-web: gunicorn --pythonpath app djangocrud.wsgi    
+web: gunicorn djangocrud.wsgi --log-file -
